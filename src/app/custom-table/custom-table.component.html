@@ -1,0 +1,12 @@
+<table [border]="1">
+  <tr>
+    <th *ngFor="let col of displayColumns">{{ col | humanize }}</th>
+  </tr>
+  <tr *ngFor="let row of dataSource">
+    <td *ngFor="let col of displayColumns">
+      <span appTooltip [title]="row[col]" [placement]="'top'">
+        {{ row[col] }}
+      </span>
+    </td>
+  </tr>
+</table>
